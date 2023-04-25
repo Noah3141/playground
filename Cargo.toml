@@ -1,0 +1,13 @@
+[package]
+name = "playground"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+lib = {path = "./lib"} # Note that the left-hand name needs to match the foldername on the right
+
+# Can also be written in the following manner, to break out from normal dependencies:
+# [depdendencies.lib]
+# path = "./lib"
