@@ -9,9 +9,13 @@
 
 ### You can find videos related to this repo on my [YouTube channel](https://www.youtube.com/@NoahSteckley/videos)
 
+---
+
 <br/>
 
----
+## <iframe width="768" height="432" src="https://miro.com/app/embed/uXjVMPQnIBo=/?pres=1&frameId=3458764552694875888&embedId=758055097921" frameborder="0" scrolling="no" allow="fullscreen; clipboard-read; clipboard-write" allowfullscreen></iframe>
+
+## <br/>
 
 ## Questions You May Have
 
