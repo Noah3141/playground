@@ -13,7 +13,8 @@
 
 <br/>
 
-<iframe width="768" height="432" src="https://miro.com/app/embed/uXjVMPQnIBo=/?pres=1&frameId=3458764552694875888&embedId=758055097921" frameborder="0" scrolling="no" allow="fullscreen; clipboard-read; clipboard-write" allowfullscreen></iframe>
+![Rust Import Structure 1](https://user-images.githubusercontent.com/66894106/234412414-97a3c1b1-e896-45bc-b55b-7dd4f94756d1.jpg)
+![Rust Import Structure 2](https://user-images.githubusercontent.com/66894106/234412425-64a3f5cd-9987-40b9-bf72-3fd42f1e0bc8.jpg)
 
 <br/>
 
