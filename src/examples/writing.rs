@@ -18,3 +18,4 @@ pub fn write_to_file(path: &str, text: &str) -> std::io::Result<()> {
 
     Ok(())
 }
+

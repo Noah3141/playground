@@ -26,3 +26,9 @@ pub fn create_file(path_name: &str) -> std::io::Result<()> {
     
     Ok(())
 }
+
+
+/* Moving a file */
+
+
+/* Renaming a file */

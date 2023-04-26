@@ -20,10 +20,12 @@
 
 ## Questions You May Have
 
+> How do I read novel Rust code?
+
+The way I've written most of this code is not immediately beginner friendly. First you do need to know the basics of Rust's syntax. I've done things like package the right hand side of assignment statements inside curly braces, which can add to the apparent complexity, but only if you aren't used to the syntax. In addition, I've scoped entities as little as possible. This leads to very long verbose chunks of code, in a way that is confusing/overwhelming if you don't know how to read it, but easy and useful if you do know: Strings of namespaces look long, but the entity that matters is the final one. Normally written code would only contain the last one or two namespaces in the chain. Here, they are all left in, to get you familiarized with the crates involved.
+
 > What is the difference between all these `std::fs` and `std::io` options?
 
 `std::io` tackles more complicated data types and possibilities, while `std::fs` is better for basic tasks of reading, writing, and saving to file system.
 
 > Why would I ever want to read something in bytes?
-
->
