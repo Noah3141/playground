@@ -25,14 +25,10 @@ use examples::{*};
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
 
-    let client = reqwest::blocking::Client::new();
-    let req = client.get("https://catfact.ninja/fact").build().expect("Couldn't build your request!");
+    
 
-    let res = client.execute(req)?;
 
-    let json = res.text().unwrap();
 
-    let fun = json.
 
 
     Ok(())
@@ -41,6 +37,11 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 
 
 
+
+
+
+
+/*
 
 fn cool_idea() {
 
@@ -61,3 +62,6 @@ fn cool_idea() {
     }
 
 }
+
+
+*/
