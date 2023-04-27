@@ -23,19 +23,41 @@ mod examples;
 use examples::{*};
 
 
+fn main() -> Result<(), Box<dyn std::error::Error>> {
+
+    let client = reqwest::blocking::Client::new();
+    let req = client.get("https://catfact.ninja/fact").build().expect("Couldn't build your request!");
+
+    let res = client.execute(req)?;
+
+    let json = res.text().unwrap();
+
+    let fun = json.
 
 
-fn main() {
-
-    if let Err(err) = csv::writing::writefile_csv_test("./CSV_files") {
-        println!("{}", err);
-        std::process::exit(1);
-    }
-    
-
+    Ok(())
 }
 
 
 
 
 
+fn cool_idea() {
+
+
+
+    let mut data = csv::struct_to_csv::CsvData {
+        name: String::from("John"),
+        money: 400,
+        phone: String::from("370-420-5557")
+    };
+
+    
+    let now = datetime::get_now();
+
+    if let Err(err) = data.write_struct_csv(format!("./{now}").as_str()) {
+        println!("{}", err);
+        std::process::exit(1);
+    }
+
+}

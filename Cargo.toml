@@ -7,6 +7,18 @@ edition = "2021"
 
 [dependencies]
 csv = "1.2.1"
+
+serde = "1.0.160" # Serialized-DeSerialize JSON as Struct
+serde_derive = "1.0.160" 
+# Most people write serde imports together as: 
+# serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0.96"
+
+chrono = "0.4.24"
+reqwest = {version = "0.11.16", features = ["blocking"]}
+tokio = { version = "1.28.0", features = ["full"] }
+
+
 lib = {path = "./lib"} # Note that the left-hand name needs to match the foldername on the right
 
 # Can also be written in the following manner, to break out from normal dependencies:

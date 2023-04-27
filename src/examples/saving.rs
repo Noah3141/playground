@@ -32,3 +32,7 @@ pub fn create_file(path_name: &str) -> std::io::Result<()> {
 
 
 /* Renaming a file */
+
+
+
+/* Checking if a directory exists */

@@ -29,7 +29,3 @@ pub fn writefile_csv_test(file_path: &str) -> Result<(), Box<dyn std::error::Err
     Ok(())
 }
 
-pub fn append_csv(file_path: &str) -> Result<(), Box<dyn std::error::Error>> {
-
-    Ok(())
-}
