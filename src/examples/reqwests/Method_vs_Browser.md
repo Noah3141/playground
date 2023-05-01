@@ -62,15 +62,34 @@
 
 ![GET_Bored_API](https://user-images.githubusercontent.com/66894106/235520101-edf95730-bd0a-4eb8-aa6d-daa1ee14a292.png)
 
+    Notice the response type is now "application/json"
+
 ## Reqwest Methods:
 
-> `.json` requires you to have serde as well, and the JSON feature enabled for Reqwest. You can then call `.json::<MyStruct>().await` to attempt to take the response's JSON (assuming it responds in JSON) and deserialize it into the named struct. It's important that you name the struct type you have prepared to catch the JSON (here "MyStruct"), which need to at least be filled in completely by the JSON.
+> Printing the Response struct directly (using debug print {:?}) gives you
+>
+> `Response { url: Url { scheme: "https", cannot_be_a_base: false, username: "", password: None, host: Some(Domain("www.boredapi.com")), port: None, path: "/api/activity", query: None, fragment: None }, status: 200, headers: {"server": "Cowboy", "connection": "keep-alive", "x-powered-by": "Express", "access-control-allow-origin": "*", "access-control-allow-headers": "Origin, X-Requested-With, Content-Type, Accept", "content-type": "application/json; charset=utf-8", "content-length": "143", "etag": "W/\"8f-s9F4x7F+QchQpBgcYQ1CQITfX+k\"", "date": "Mon, 01 May 2023 19:57:48 GMT", "via": "1.1 vegur"} }`
+
+> `.json` requires you to have serde as well, and the JSON feature enabled for Reqwest. You can then call `.json::<MyStruct>().await` to attempt to take the response's JSON (assuming it responds in JSON) and deserialize it into the named struct. It's important that you name the struct type you have prepared to catch the JSON (here "MyStruct"), which need to at least be filled in completely by the JSON. If you do not, you will get the error:
+>
+> `type inside "async fn" body must be known in this context
+cannot infer type for type parameter "T" declared on the method "json"`
+
+> If you declare the struct with a field that doesn't match the JSON (u64 when the JSON gives the number in a string), you'll get:
+>
+> `thread 'main' panicked at 'called `Result::unwrap()`on an`Err` value: reqwest::Error { kind: Decode, source: Error("invalid type: string \"4101229\", expected u64", line: 1, column: 145) }', src\examples\reqwests\get.rs:50:51`
+
+> `.text` gives the JSON in a String with the special characters escaped (rarely what you want from a JSON API)
 
 ---
 
 ## URL
 
+    https://datausa.io/api/data?drilldowns=Nation&measures=Population
+
 ## Browser
+
+    API responds with JSON instead of a webpage.
 
 ## Dev Tools
 

@@ -36,7 +36,7 @@ pub async fn get_req() -> Result<(), Box<dyn std::error::Error>> {
 
     let req = {
                                 client // Our reqwest::Client
-                                    .get("https://www.rust-lang.org") // Makes a RequestBuilder (request being built)
+                                    .get("https://www.boredapi.com/api/activity") // Makes a RequestBuilder (request being built)
                                     .build() // Stamp complete on this request, giving a Result
                                     .unwrap() // Blithely assume Result<Ok(x)>, and give me the contents x
     };
@@ -47,8 +47,23 @@ pub async fn get_req() -> Result<(), Box<dyn std::error::Error>> {
             ? // Give me the result Ok contents, else if Err, pass up to function caller
     };
 
-    println!("{:?}", res));
-    
+    //let structified_json = res.json::<BoredRes>().await.unwrap();
+    //println!("\n{:?}", structified_json);
+    //println!("Your activity is: {}\n", structified_json.activity);
+
+    println!("{:?}", res.text().await.unwrap());
 
     Ok(())
+}
+
+
+#[derive(Debug, serde::Deserialize)] // The following struct will implement Debug and Deserialize traits
+pub struct BoredRes { // A struct to capture the JSON response from boredapi.com
+    pub activity: String,
+    pub r#type: String,
+    pub participants: u8,
+    pub price: f32, //? We can tell this needs to be a float by the provided .0 in the JSON
+    pub link: Option<String>, //? if the API sends an empty string, this will ALWAYS be "Some". Option::None only corresponds to JSON 'null' 
+    pub key: String,
+    pub accessibility: f32, 
 }
