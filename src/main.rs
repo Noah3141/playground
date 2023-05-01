@@ -23,16 +23,13 @@ mod examples;
 use examples::{*};
 
 
-fn main() -> Result<(), Box<dyn std::error::Error>> {
+fn main() {
 
-    
+    json::struct_to_json::print_pets();
 
-
-
-
-
-    Ok(())
 }
+
+
 
 
 

@@ -8,7 +8,7 @@
 
                                         use std::io::Read;
 
-pub fn read_to_string(path: &str) ->    String { 
+pub fn read_to_string(path: &str) -> String { 
     // path formatted as a string slice like "./myfile.txt";
 
     let content: String = match std::fs::read_to_string(path) { // This can return certain errors.

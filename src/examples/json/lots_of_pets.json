@@ -1,0 +1,27 @@
+{
+    "cats": [
+        {
+            "name": "Whiskers",
+            "age": 4,
+            "breed": "Ragdoll",
+            "friendly": "Mean"
+        },
+        {
+            "name": "Tut",
+            "age": 13,
+            "breed": "Egyptian",
+            "friendly": "Friendly"
+        }
+    ],
+    "dogs": [
+        {
+            "name": "Max",
+            "age": 12,
+            "breed": "Huskey",
+            "tricks": ["Play dead", "Shake hands", "Bring beer"]
+        }
+    ],
+    "status": {
+        "Adopted": "From neighbor"
+    }
+}

@@ -29,3 +29,5 @@ The way I've written most of this code is not immediately beginner friendly. Fir
 `std::io` tackles more complicated data types and possibilities, while `std::fs` is better for basic tasks of reading, writing, and saving to file system.
 
 > Why would I ever want to read something in bytes?
+
+> What is the difference between all these "serde" crate/feature imports?

@@ -11,6 +11,7 @@ impl CsvData {
 
         let mut wtr = csv::Writer::from_path(file_path)?;
 
+        // Serialize writes a record, which is essentially a ROW
         wtr.serialize((&self.name, &self.money, &self.phone))?; // serialize is used when your data consists of more complex values than just Strings
         wtr.flush()?;
 
