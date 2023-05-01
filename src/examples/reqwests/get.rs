@@ -1,5 +1,6 @@
 /* Making GET Requests */ //! Be sure to set up async; see README
 
+
     /**
      *  (All these functions have prints built in)
      *  Here, like in reading functions, we are defining a function which either returns a String, or a variable/unknown ("box") type ("dyn") of error.
@@ -35,7 +36,7 @@ pub async fn get_req() -> Result<(), Box<dyn std::error::Error>> {
 
     let req = {
                                 client // Our reqwest::Client
-                                    .get("https://www.boredapi.com/api/activity") // Makes a RequestBuilder (request being built)
+                                    .get("https://www.rust-lang.org") // Makes a RequestBuilder (request being built)
                                     .build() // Stamp complete on this request, giving a Result
                                     .unwrap() // Blithely assume Result<Ok(x)>, and give me the contents x
     };
@@ -46,7 +47,8 @@ pub async fn get_req() -> Result<(), Box<dyn std::error::Error>> {
             ? // Give me the result Ok contents, else if Err, pass up to function caller
     };
 
-    println!("{:?}", res);
+    println!("{:?}", res));
+    
 
     Ok(())
 }

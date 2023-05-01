@@ -25,7 +25,7 @@ use examples::{*};
 #[tokio::main]
 async fn main() {
 
-    let body = reqwests::get::get_req_shortcut().await.unwrap();
+    reqwests::get::get_req().await.unwrap();
 
 }
 
