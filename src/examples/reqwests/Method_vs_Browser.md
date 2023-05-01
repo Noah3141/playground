@@ -60,6 +60,8 @@
 
 ## Dev Tools
 
+![GET_Bored_API](https://user-images.githubusercontent.com/66894106/235520101-edf95730-bd0a-4eb8-aa6d-daa1ee14a292.png)
+
 ## Reqwest Methods:
 
 > `.json` requires you to have serde as well, and the JSON feature enabled for Reqwest. You can then call `.json::<MyStruct>().await` to attempt to take the response's JSON (assuming it responds in JSON) and deserialize it into the named struct. It's important that you name the struct type you have prepared to catch the JSON (here "MyStruct"), which need to at least be filled in completely by the JSON.
