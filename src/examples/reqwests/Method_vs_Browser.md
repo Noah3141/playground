@@ -93,6 +93,8 @@ cannot infer type for type parameter "T" declared on the method "json"`
 
 ## Dev Tools
 
+![GET_DataUSA](https://user-images.githubusercontent.com/66894106/235530040-4d583a4e-c0a9-42c1-97c1-301203fff47b.png)
+
 ## Reqwest Methods:
 
 ---
