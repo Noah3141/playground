@@ -102,3 +102,4 @@ pub fn print_pets() -> serde_json::Result<()> {
 
     Ok(())
 }
+

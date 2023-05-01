@@ -39,6 +39,7 @@ pub struct Pets {
 /* Turning JSON into a struct variable */
 
 // ?) In order to convert into a Rust variable, we need a variable defined that is able to catch that JSON.
+// ?) In order to convert into a Rust variable, we need a variable defined that is able to catch that JSON.
 // !) let stru = serde_json::from_str( &json_string );
 // ?) This code errors, because 'serde_json::from_str' needs to know what kind of structured variable to parse it into.
 // ?) Your first option is to use a converter online, to take your example JSON (say, from an API, where you can't control what the JSON format is,
@@ -77,7 +78,7 @@ pub fn print_struct_from_larger_json() -> () {
     println!("There is no Rust \"friends\" field for our created struct 'whiskers.' Serde_json came across it, had no spot to put it, and tossed it out.\n ");
 }
 
-// ?)) Okay, let's try that again, but this time create a JSON string that matches the pattern we state as a Cat
+    // ?)) Okay, let's try that again, but this time create a JSON string that matches the pattern we state as a Cat
 
 pub fn print_struct_from_matching_json() -> () {
     let j = serde_json::json!({
@@ -95,10 +96,10 @@ pub fn print_struct_from_matching_json() -> () {
     println!("Whisker's breed is {}\n\n", whiskers.breed);
 }
 
-// ?) Next you might ask, what if I make a struct to catch the JSON, but the JSON provides a different type of value than I had expected?
-// ?) Here, a JSON string (Value, technically) is created that offers breed as a Vec, rather than a String.
+    // ?) Next you might ask, what if I make a struct to catch the JSON, but the JSON provides a different type of value than I had expected?
+    // ?) Here, a JSON string (Value, technically) is created that offers breed as a Vec, rather than a String.
 
-// !) Panics
+    // !) Panics
 pub fn print_struct_from_mismatching_json() -> () { 
     let j = serde_json::json!({
         "name": "Whiskers", 
@@ -114,9 +115,9 @@ pub fn print_struct_from_mismatching_json() -> () {
     println!("Whisker's breed is {}\n\n", whiskers.breed);
 } // !) This means that if the background API changes the JSON structure, your structs will mismatch and error
 
-//? ) If we try to convert JSON that doesn't have all the field of our struct, into that struct, we will error out.
+    //? ) If we try to convert JSON that doesn't have all the field of our struct, into that struct, we will error out.
 
-// !) Panics
+    // !) Panics
 pub fn print_struct_from_smaller_json() -> () {
     let j = serde_json::json!({
         "name": "Whiskers", 
@@ -129,3 +130,7 @@ pub fn print_struct_from_smaller_json() -> () {
     println!("\nWhisker's age is {} (printed from larger JSON)\n", whiskers.age); // Try to print a value we did receive
     println!("There is no Rust \"friends\" field for our created struct 'whiskers.' Serde_json came across it, had no spot to put it, and tossed it out.\n ");
 }
+
+/* 
+Check out Rocket's built-in serde tools, which instead look like rocket::serde::json
+ */

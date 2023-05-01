@@ -22,44 +22,11 @@ Use lib::*; works on lib.rs, not the folder, so there is no lib::lib. You're imp
 mod examples;
 use examples::{*};
 
+#[tokio::main]
+async fn main() {
 
-fn main() {
-
-    json::json_to_struct::print_struct_from_smaller_json();
-
-
-}
-
-
-
-
-
-
-
-
-
-
-/*
-
-fn cool_idea() {
-
-
-
-    let mut data = csv::struct_to_csv::CsvData {
-        name: String::from("John"),
-        money: 400,
-        phone: String::from("370-420-5557")
-    };
-
-    
-    let now = datetime::get_now();
-
-    if let Err(err) = data.write_struct_csv(format!("./{now}").as_str()) {
-        println!("{}", err);
-        std::process::exit(1);
-    }
+    let body = reqwests::get::get_req_shortcut().await.unwrap();
 
 }
 
 
-*/
