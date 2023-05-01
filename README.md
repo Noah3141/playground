@@ -31,3 +31,14 @@ The way I've written most of this code is not immediately beginner friendly. Fir
 > Why would I ever want to read something in bytes?
 
 > What is the difference between all these "serde" crate/feature imports?
+
+Serde (**ser**ialize-**de**serialize) is capable of converting all kinds of datatypes into all kinds of serializations, not just JSON. Other ones you may have heard of include URL query strings, in the x-www-form-urlencoded format, or YAML, a straight-forward config language.
+The "serde" import refers to the overall crate, at [serde.rs](https://serde.rs). The `features = ["derive"]` part of our Cargo.toml states that we want to include the optional portion of their crate that allows for the shorthand macro label above our structs and enums:
+
+`#[derive(Serialize, Deserialize)]`
+
+Which unfolds at compile time into code outlining the traits and abilities of our struct/enum, without us writing it.
+
+So far, that doesn't mean we're doing anything with JSON, nor that we want to call a JSON serialization function! If we indeed want to do that, there is a different dependency, that will work together with all of the above preparation:
+
+https://docs.rs/serde_json/latest/serde_json/

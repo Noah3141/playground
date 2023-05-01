@@ -25,7 +25,8 @@ use examples::{*};
 
 fn main() {
 
-    json::struct_to_json::print_pets();
+    json::json_to_struct::print_struct_from_smaller_json();
+
 
 }
 

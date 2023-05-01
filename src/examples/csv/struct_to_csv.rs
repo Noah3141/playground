@@ -1,4 +1,4 @@
-#[derive(Debug, serde_derive::Serialize, serde_derive::Deserialize)]
+#[derive(Debug, serde::Serialize, serde::Deserialize)]
 pub struct CsvData {
     pub name: String,
     pub money: u64,

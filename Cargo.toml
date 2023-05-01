@@ -9,7 +9,6 @@ edition = "2021"
 csv = "1.2.1"
 
 serde = { version = "1.0.160", features = ["derive"] }# Serialized-DeSerialize JSON as Struct. Don't forget the derive feature!
-serde_derive = "1.0.160" # This is something different
 
 serde_json = "1.0.96"
 
