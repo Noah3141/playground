@@ -10,7 +10,8 @@
 
 ## Dev Tools
 
-    ![Get Rustlang.org](../example_images/../reqwests/example_images/GET_RustLangOrg.png)
+   ![GET_RustLangOrg](https://user-images.githubusercontent.com/66894106/235514674-fc56e361-42e8-4a8f-8d16-1a93176b41e6.png)
+
 
 ## Reqwest Methods:
 
