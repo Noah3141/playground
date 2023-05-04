@@ -29,3 +29,13 @@ pub fn writefile_csv_test(file_path: &str) -> Result<(), Box<dyn std::error::Err
     Ok(())
 }
 
+/*
+    csv::writing::writefile_csv_test("./Just dot slash"); // This will output to the crate folder when run with cargo, or to the folder in which the executable sits
+    csv::writing::writefile_csv_test("./dot slash.csv"); // If you want it to be a file of a type, rather than unrecognized, give the ext
+
+    csv::writing::writefile_csv_test("~/Just tilde"); // ! Can't do that
+    csv::writing::writefile_csv_test("~/tilde.csv"); // ! Can't do that
+    csv::writing::writefile_csv_test("./Attempt with spaces.csv") //? Spaces will work
+    csv::writing::writefile_csv_test("./NewFolder/Attempt with spaces.csv") // ! Can't create directory with it
+    csv::writing::writefile_csv_test("./Attempt with: things.csv"); // ! This will create the file but the :.. is chopped off
+ */

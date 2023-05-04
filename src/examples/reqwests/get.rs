@@ -47,13 +47,14 @@ pub async fn get_req() -> Result<(), Box<dyn std::error::Error>> {
             ? // Give me the result Ok contents, else if Err, pass up to function caller
     };
 
-    //let structified_json = res.json::<BoredRes>().await.unwrap();
-    //println!("\n{:?}", structified_json);
-    //println!("Your activity is: {}\n", structified_json.activity);
+    let structified_json = res.json::<BoredRes>().await.unwrap();
+    println!("\n{:?}", structified_json);
+    println!("Your activity is: {}\n", structified_json.activity);
 
-    println!("{:?}", res.text().await.unwrap());
+    //println!("{:?}", res.json::<serde_json::Value>().await.expect("msg"));
 
     Ok(())
+
 }
 
 

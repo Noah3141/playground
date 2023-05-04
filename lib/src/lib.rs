@@ -1,7 +1,7 @@
 
 
 // Imports
-pub mod rocket;
+pub mod rocket_example;
 pub mod druid;
 
 

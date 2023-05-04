@@ -1,6 +1,8 @@
 #![allow(unused)]
+use lib::{*};
+#[macro_use] extern crate rocket;
 
-use lib::*; 
+// use lib::*; 
 /// Multi
 /// line
 // Normal annotation 
@@ -22,10 +24,10 @@ Use lib::*; works on lib.rs, not the folder, so there is no lib::lib. You're imp
 mod examples;
 use examples::{*};
 
-#[tokio::main]
+#[rocket::main]
 async fn main() {
 
-    reqwests::get::get_req().await.unwrap();
+
 
 }
 

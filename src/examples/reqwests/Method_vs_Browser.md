@@ -89,7 +89,9 @@ cannot infer type for type parameter "T" declared on the method "json"`
 
 ## Browser
 
-    API responds with JSON instead of a webpage.
+    API responds with JSON instead of a webpage. See this other URL for response JSON example:
+
+> [DataUSA.io/about/api](https://datausa.io/about/api)
 
 ## Dev Tools
 
