@@ -1,3 +1,4 @@
+/* Rocket, alone, is like Python's flask. We are not writing front end code, but we can render html pages */
 #[macro_use] extern crate rocket; // Thus unfolds into a bunch of use statements that make the crate more ergonomic
 
 mod utils;
