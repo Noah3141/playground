@@ -12,7 +12,6 @@ use routes::{
 
 #[rocket::main]
 async fn main() -> Result<(), rocket::Error> {
-    
 
     let _rocket = rocket::build()
         .mount("/", routes![world])
@@ -20,4 +19,5 @@ async fn main() -> Result<(), rocket::Error> {
         .await?;
 
     Ok(())
+    
 }

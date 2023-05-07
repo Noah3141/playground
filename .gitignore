@@ -1,2 +1,9 @@
 /target
 /rocket_playground/target
+/yectix_fullstack/app-backend/target
+/yectix_fullstack/app-frontend/target
+/yectix_fullstack/app-shared/target
+/rosy_stack/app-backend/target
+/rosy_stack/app-frontend/target
+/rosy_stack/app-shared/target
+/rosy_stack/app-frontend/node_modules
