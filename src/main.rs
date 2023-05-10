@@ -24,10 +24,12 @@ Use lib::*; works on lib.rs, not the folder, so there is no lib::lib. You're imp
 mod examples;
 use examples::{*};
 
+// !) Remember to await async functions here to!
+
 #[rocket::main]
 async fn main() {
 
-    reqwest::ge
+    reqwests::get::get_to_json_for_serde_json().await;
 
 }
 
