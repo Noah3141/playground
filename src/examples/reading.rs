@@ -8,6 +8,8 @@
 
                                         use std::io::Read;
 
+// !) File paths are interpreted FROM ROOT DIRECTORY. So files within our project will be referenced with "./src/..."
+
 pub fn read_to_string(path: &str) -> String { 
     // path formatted as a string slice like "./myfile.txt";
 
@@ -105,7 +107,7 @@ pub fn read_by_bytestep(path: &str) -> String {
 // Here we start using the ? to say "Let the superordinate function unwrap or not"
 pub fn read_file(path: &str) -> std::io::Result<String> {
 
-    let mut file = std::fs::File::open(path)?;
+    let mut file = std::fs::File::open(path)?; 
     let mut contents = String::new();
 
     file.read_to_string(&mut contents)?;

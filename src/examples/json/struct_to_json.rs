@@ -58,6 +58,8 @@ pub fn print_an_address() -> serde_json::Result<()> {
     // Serialize it to a JSON string.
     let j: String = serde_json::to_string(&address)?;
 
+    let value: serde_json::Value = serde_json::to_value(&address).expect("to convert");
+    let string = value.as_str();
     // Print, write to a file, or send to an HTTP server.
     println!("\nYour JSON, sir:\n{}\n", j);
 

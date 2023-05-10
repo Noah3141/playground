@@ -81,7 +81,7 @@ pub fn print_struct_from_larger_json() -> () {
     // ?)) Okay, let's try that again, but this time create a JSON string that matches the pattern we state as a Cat
 
 pub fn print_struct_from_matching_json() -> () {
-    let j = serde_json::json!({
+    let j = serde_json::json!({ // There are other ways to hold JSON, like a string literal, whereupon we'd use "serde_json::from_str" below
         "name": "Whiskers", 
         "age": 6, 
         "breed":"Ragdoll",
@@ -119,7 +119,7 @@ pub fn print_struct_from_mismatching_json() -> () {
 
     // !) Panics
 pub fn print_struct_from_smaller_json() -> () {
-    let j = serde_json::json!({
+    let j = serde_json::json!({ // here we make a serde_json::Value
         "name": "Whiskers", 
         "age": 6, 
         // !) No breed or friendliness given!
@@ -134,3 +134,7 @@ pub fn print_struct_from_smaller_json() -> () {
 /* 
 Check out Rocket's built-in serde tools, which instead look like rocket::serde::json
  */
+
+
+/* Figuring out how some JSON should be caught with a struct */
+

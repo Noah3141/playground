@@ -27,7 +27,7 @@ use examples::{*};
 #[rocket::main]
 async fn main() {
 
-
+    reqwest::ge
 
 }
 

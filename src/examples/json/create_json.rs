@@ -86,4 +86,6 @@ pub fn create_json_literally() -> String {
     println!("\nHere is your JSON, sir:{}\n", data);
 
     data.to_owned() // If it returned a reference (&str) we'd need a lifetime annotation, but for now we just convert to owned as String
+    
 }
+
