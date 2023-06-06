@@ -13,3 +13,4 @@ pub mod reqwests;
 pub mod csv;
 pub mod json;
 pub mod error_handling;
+pub mod hash_maps;

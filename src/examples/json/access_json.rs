@@ -19,13 +19,13 @@ pub fn access_json_literally() {
         
         let json: serde_json::Value = res.unwrap();
         // json now has lots of methods to call, but what you probably really want is:
-        let name = json["name"] // Value
+        let name: &str = json["name"] // Value
             .as_str() // Option<&str>
             .unwrap();
 
         println!("His name is: {name}");
 
-        // Notice here, the JSON object is treated with "serde_json::Value" at many levels
+        // // Notice here, the JSON object is treated with "serde_json::Value" at many levels
         let phones: &Vec<serde_json::Value> = json["phones"] // I'm saying "Try to access a so-called 'phones' field"
             .as_array() // I believe it will be a field with a value of list
             .unwrap(); // Go ahead and assume I'm right
@@ -87,7 +87,7 @@ pub fn file_to_field_value() -> String {
     let json_file = std::fs::read_to_string("./src/examples/json/lots_of_pets.json")
         .expect("to have the file there to read");
 
-    let json_value: serde_json::Value = serde_json::from_str(&json_file) // Use explicit type annotation to tell serde_json TO what you want FROM str. Value is your fallback, generally, if no struct available
+    let json_value: serde_json::Value = serde_json::from_str(&json_file) // ! Use explicit type annotation to tell serde_json TO what you want FROM str. Value is your fallback, generally, if no struct available
         .expect("to be able to create json Value from the String");
 
     let third_trick = json_value["dogs"][0]["tricks"][2]
@@ -99,6 +99,7 @@ pub fn file_to_field_value() -> String {
     third_trick.to_string()
 
 }
+
 pub fn insert_field_value() -> () {
 
     use serde_json::*;
@@ -115,6 +116,7 @@ pub fn insert_field_value() -> () {
     
 
     println!("New JSON:\n{}", serde_json::to_string_pretty(&json_value).unwrap())
-
+    
 }
+
 

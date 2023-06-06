@@ -19,16 +19,19 @@ pub async fn get_req_shortcut() -> Result<String, Box<dyn std::error::Error>> {
     Ok(body)
 } //? Here, we GET request a webpage, and so the response is the HTML for the page.
 
-    /* For blocking:
+    /* 
+    
+    For blocking:
 
-    let resp = reqwest::blocking::get("https://httpbin.org/ip")?...
+    let response = reqwest::blocking::get("https://httpbin.org/ip")?...
     * Notice that the ? mark operator occurs directly after the GET now, and no await(s) occur
+
+    ? The fullscale method makes use of pooled connections, and is better for many requests
+    * The Client has various configuration values to tweak, but the defaults are set to what is usually the most commonly desired value. 
+    * To configure a Client, use Client::builder() [ same thing as ClientBuilder::new() ]. Otherwise Client::new() will provide the defaults.
+    * See the next functions for examples of course
     */
 
-
-    //? The fullscale method makes use of pooled connections, and is better for many requests
-    //* The Client has various configuration values to tweak, but the defaults are set to what is usually the most commonly desired value. 
-    //* To configure a Client, use Client::builder() [ same thing as ClientBuilder::new() ]. Otherwise Client::new() will provide the defaults.
 
 pub async fn get_req() -> Result<(), Box<dyn std::error::Error>> {
 
@@ -110,20 +113,22 @@ pub async fn get_to_json_for_serde_json() {
         .json()
         .await
         .expect("making Json");
+        
+        /*
+        ?) Here we are passing from reqwest's json function, which can only output a specified type 
+        ?) (sometimes you may want to go straight into a serde labeled struct), to serde_json's Value,
+        ?) Serde_json's Value struct can be more useful, and allow more careful steps. For instance,
+        ?) A json string can either deserialize into your struct, or not. Wholesale. But if you turn
+        ?) it into a serde_json::Value, you can match on each step, and try multiple ways of access a
+        ?) variety of field names and values. This is great when you don't totally know what the JSON
+        ?) response will look like. You can say 
+        *) "Give me 'price' as an integer...*error* Oh shoot... Okay give it to me as a float!"
 
-        // ?) Here we are passing from reqwest's json function, which can only output a specified type 
-        // ?) (sometimes you may want to go straight into a serde labeled struct), to serde_json's Value,
-        // ?) Serde_json's Value struct can be more useful, and allow more careful steps. For instance,
-        // ?) A json string can either deserialize into your struct, or not. Wholesale. But if you turn
-        // ?) it into a serde_json::Value, you can match on each step, and try multiple ways of access a
-        // ?) variety of field names and values. This is great when you don't totally know what the JSON
-        // ?) response will look like.
-
-        /* //?) This also works the same
-        let res = reqwest::get("https://www.boredapi.com/api/activity")
+        ?) This syntax also works the same
+        * let res = reqwest::get("https://www.boredapi.com/api/activity")
         .await
         .expect("Trying to get a response")
-        .json::<serde_json::Value>()
+        * .json::<serde_json::Value>()
         .await
         .expect("making Json");
         */

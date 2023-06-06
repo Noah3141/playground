@@ -37,6 +37,13 @@ pub struct Pets {
     pub status: Adoption,
 }
 
+#[derive(Serialize, Deserialize)]
+#[serde(rename_all = "SCREAMING_SNAKE_CASE")] // ?) This struct now corresponds to JSON with the format: CATS: [..], DOGS: [..], CURRENT_STATUS: [..]
+pub struct JsonWithScreams {
+    pub cats: Vec<Cat>,
+    pub dogs: Vec<Dog>,
+    pub current_status: Adoption,
+} 
 
 
 

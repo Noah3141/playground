@@ -1,3 +1,3 @@
 pub mod basics;
-pub mod json_endpoints;
+pub mod json_responses;
 pub mod HTML_endpoints;

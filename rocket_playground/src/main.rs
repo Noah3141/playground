@@ -3,9 +3,10 @@
 
 mod utils;
 mod routes;
+use rocket_dyn_templates::Template;
 use routes::{
     basics::*,
-    json_endpoints::*,
+    json_responses::*,
     HTML_endpoints::*,
 };
 
@@ -14,7 +15,14 @@ use routes::{
 async fn main() -> Result<(), rocket::Error> {
 
     let _rocket = rocket::build()
-        .mount("/", routes![world])
+        .mount("/", routes![
+            world,
+            data,
+            basic_json,
+            serde_json_value,
+            render_file::index
+        ])
+        .attach(Template::fairing())
         .launch()
         .await?;
 

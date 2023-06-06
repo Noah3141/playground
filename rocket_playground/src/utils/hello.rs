@@ -1,6 +1,8 @@
+
 pub fn print_hello() -> &'static str {
     "Hello, world!"
 }
+
 
 pub fn print_data() -> &'static str  {
 

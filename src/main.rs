@@ -9,7 +9,8 @@ use lib::{*};
 // // This is no longer relevant 
 // !This is bad! 
 // todo: Remember this
-// *This is another tone
+// *This is another tone asfasdf 
+/*  This is a long block comment */
 // ? This asks a question
 
 /* 
@@ -32,5 +33,4 @@ async fn main() {
     reqwests::get::get_to_json_for_serde_json().await;
 
 }
-
 
