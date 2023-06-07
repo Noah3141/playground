@@ -30,7 +30,7 @@ use examples::{*};
 #[rocket::main]
 async fn main() {
 
-    reqwests::get::get_to_json_for_serde_json().await;
+    hash_maps::modifying::modify_in_place();
 
 }
 
